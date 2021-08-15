@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 from flask import Flask, render_template, send_from_directory
 from flask_pymongo import PyMongo
-import backend.contact, backend.dataBasics, backend.ip, util.env
+import backend.contact, backend.dataBasics, backend.ip, secret.env as env
 
 app = Flask(__name__)
 
 #connect and create db
-app.config["MONGO_URI"] = util.env.mongoURI
+app.config["MONGO_URI"] = env.mongoURI
 
 #initialize the client for mongodb
 mongo = PyMongo(app)

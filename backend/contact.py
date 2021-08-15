@@ -1,5 +1,5 @@
 import requests
-import util.env
+import secret.env as env
 from flask import request
 
 def sendmail():
@@ -9,9 +9,9 @@ def sendmail():
   message = request.args.get('message')
 
   return requests.post(
-    util.env.url,
-    auth=("api", util.env.api),
-    data={"from": util.env.mailFrom,
+    env.url,
+    auth=("api", env.api),
+    data={"from": env.mailFrom,
       "to": "Gustav Andersson <gustav87and@gmail.com>",
       "subject": f'From {name} on gstav.se',
       "text": f'Name: {name}\nEmail: {email}\nTopic: {topic}\nMessage: {message}'})
