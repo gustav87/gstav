@@ -1,0 +1,45 @@
+<main id="contactPage" class="content">
+	<div class="formWrapper">
+		<p id="header">Contact me</p>
+
+		<form action="backend/contact" method="get" id="contactMeForm">
+			<div>
+				<label>
+					<p>Name</p>
+					<input type="text" id="name" name="name" autofocus required minlength="2"/>
+				</label>
+			</div>
+			<div>
+				<label>
+					<p>E-mail</p>
+					<input type="text" id="email" name="email" required/>
+				</label>
+			</div>
+			<div>
+				<label>
+					<p>Topic</p>
+					<select id="topic" name="topic">
+						<option>---</option>
+						<option id="hi"
+							value="Just wanna say hi">Just want to say hi</option>
+						<option id="suggestion"
+							value="Suggestion for site">Suggestion for site</option>
+						<option id="date"
+							value="I want to ask you out for a date">I want to ask you out for a date</option>
+						<option id="dontKnow"
+							value="I don't know where I am">I don't know where I am</option>
+					</select>
+				</label>
+			</div>
+			<div>
+				<label>
+					<p>Message</p>
+					<textarea placeholder="Message" name="message" required id="message"></textarea>
+				</label>
+			</div>
+			<input id="saveCredentials" type="checkbox" name="saveCredentials">
+			<label for="saveCredentials">Save name and email?</label>
+			<div><input type="submit" value="Send"/></div>
+		</form>
+	</div>
+</main>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Gustav Andersson</title>
+	<meta name="viewport" content="device-width, initial-scale=1.0" charset="UTF-8">
+	<meta name="google-site-verification" content="-_j7NlAjzzTWzpQUjdK6DF5awsIMDY1czyb9m-vMNLw" />
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="stylesheet" href="./util/font-awesome-4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<script defer src="https://malsup.github.io/jquery.form.js"></script>
+	<link rel="apple-touch-icon" sizes="180x180" href="./util/favicon/apple-touch-icon.png?v=XBrlmlKwae">
+	<link rel="icon" type="image/png" sizes="32x32" href="./util/favicon/favicon-32x32.png?v=XBrlmlKwae">
+	<link rel="icon" type="image/png" sizes="16x16" href="./util/favicon/favicon-16x16.png?v=XBrlmlKwae">
+	<link rel="manifest" href="./util/favicon/manifest.json?v=XBrlmlKwae">
+	<link rel="shortcut icon" href="./util/favicon/favicon.ico?v=XBrlmlKwae">
+	<meta name="theme-color" content="#ffffff">
+</head>
+<body ng-controller="NavigationController as vm">
+<div class="pageWrapper">
+	<header>
+		<h1><a href='/'>Gustav Andersson</a></h1>
+	</header>
+	<div class="bigWrapper">
+		<nav>
+			<i class="fa fa-bars" id="menuButton" aria-hidden="true"><a href="#"></a></i>
+			<ul>
+				<li class="navButton" ng-class="vm.navClass('index')">
+						<a href="#!/index" ng-click="vm.stopCount()">Home</a>
+				</li><!--
+		 --><li class="navButton" ng-class="vm.navClass('blog')">
+						<a href="#!/blog" ng-click="vm.stopCount()">Blog</a>
+				</li><!--
+		 --><li class="navButton" ng-class="vm.navClass('playground')">
+						<a href="#!/playground" ng-click="vm.stopCount()">Playground</a>
+				</li><!--
+		 --><li class="navButton">
+		 				<a href="#!/contact" ng-click="vm.stopCount()">Contact</a>
+		 		</li>
+			</ul>
+		</nav>
+		<div class="contentWrapper"><div ng-view></div></div>
+		
+		<footer>Gustav Andersson 2016 &#128640;</footer>
+	</div>
+</div>
+<script defer src="./js/script.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/GithubController.js"></script>
+<script src="./js/UserController.js"></script>
+<script src="./js/DefaultController.js"></script>
+<script src="./js/NavigationController.js"></script>
+<script src="./js/ColorsController.js"></script>
+<script src="./js/githubFactory.js"></script>
+<script src="./js/modifyStyleDirective.js"></script>
+<script src="./js/myTranscludeDirective.js"></script>
+<script src="./js/ContactController.js"></script>
+<script src="./js/JsBasicsController.js"></script>
+<script src="./js/PlaygroundController.js"></script>
+<script src="./js/MapController.js"></script>
+<script src="./js/BlogController.js"></script>
+<script src="./js/AngularBasicsController.js"></script>
+<script src="./js/FlickrViewerController.js"></script>
+<script src="./js/appFilters.js"></script>
+<script src="./js/ModifyStyleController.js"></script>
+<script src="./js/DataBasicsController.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDArSXIEl4x-YPh7iu_enHlm1AnPWyqGU4"></script>
+</body>
+</html>

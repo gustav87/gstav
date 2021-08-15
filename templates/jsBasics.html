@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PHZZV92');</script>
+	<!-- End Google Tag Manager -->
+	<title>Gustav Andersson</title>
+	<meta name="viewport" content="device-width, initial-scale=1.0" charset="UTF-8">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto'>
+	<link rel="stylesheet" href="./util/font-awesome-4.7.0/css/font-awesome.min.css">
+	<script defer src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<script defer src="./util/libs/q.js"></script>
+	<link rel="icon" href="./util/favicon/favicon.ico">
+</head><!--Looking at source code, like a baws-->
+<body id="jsBasicsPage">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHZZV92"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="wrapper">
+	<header>
+		<h1>Gustav Andersson <span>Junior web developer</span></h1>
+	</header>
+	<nav>
+		<i class="fa fa-bars" id="menuButton" aria-hidden="true"><a href="#"></a></i>
+		<div id="navButtons">
+			<ul>
+				<li class="navButton"><a href="./">Home</a></li>
+			</ul>
+		</div>
+	</nav>
+	<main>
+
+		<div id="cat"></div>
+
+		<div id="button1">Click me</div>
+		<div id="box1">1</div>
+		<label for="lol">Checkbox knapp</label><input type="checkbox" name="fisk" id="lol">
+		<div class="boxx">2</div><div class="boxx">3</div>
+		<input type="radio" name="radioBtn1"><input type="radio" name="radioBtn3"><input type="radio" name="radioBtn3">
+
+		<div id="pancakeContent"></div>
+		<p id="personsJson"></p>
+
+		<button id="load3">Klicka här</button>
+		<div id="ajax3"></div>
+		<div id="ajaxDiv"></div>
+		<p>Try out populating your very own JSON-object, it's super fun!</p>
+		<form>
+			<input type="text" id="jsonInput1">
+			<input type="text" id="jsonInput2">
+			<button id="submitJson">Submit Data</button>
+			<button id="publishJson">Display data</button>
+			<span id="jsonObjectCounter"></span>
+		</form>
+		<div>
+			<table class="blueTable" id="jsonTable">
+				<tbody></tbody>
+			</table>
+		</div>
+
+		<div>
+			<p>Here's a broken link:</p>
+			<div id="errorButton"><a href="fisk.html">Click to see error page</a></div>
+			<button onclick="temp()">Button with onclick calling on function defined in script tag</button>
+			<p>
+				onclick returns false for this link, causing the browser not to perform any default action associated with the button or link:
+				<a href="/index" onclick="return false">click me</a>
+			</p>
+		</div>
+		<div id="myListenerTest">
+			<p>
+				<a href="#">hejsan</a>
+			</p>
+		</div>
+		<div id="myListenerTest2">
+			<p>
+				<a href="#">hej0</a>
+				<a href="#">hej1</a>
+				<a href="#">hej2</a>
+				<a href="#">hej3</a>
+			</p>
+		</div>
+		
+	</main>
+<footer>Gustav Andersson 2016 &#128640;</footer>
+</div>
+
+<script>
+function get_ua() {
+	return (location.hostname === 'localhost' || location.hostname === 'gussi') ? 'UA-100751466-2' : 'UA-100751466-1';
+}
+console.log(get_ua());
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', get_ua(), 'auto');
+
+ga('send', 'pageview', '/jsBasics.html', {title: 'JSBASICSPAGE'});
+</script>
+
+<script defer src="./js/script.js"></script>
+<script defer src="./js/basic.js"></script>
+<script>var temp = function() {console.log('hejsan');};</script>
+</body>
+</html>

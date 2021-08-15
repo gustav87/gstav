@@ -1,0 +1,20 @@
+<main id="dataBasicsPage" class="content">
+  <p>
+    <a href="#" class="track-click">hej0</a>
+    <a href="#">hej1</a>
+    <a href="#" class="track-click">hej2</a>
+    <a href="#">hej3</a>
+  </p>
+  <p id="tst"></p>
+  <form id="myForm">
+    Name: <input type="text" name="name" id="name">
+    Email: <input type="text" name="email">
+    <input type="submit" value="send">
+  </form>
+  <p id="resultText"></p>
+  <button ng-click="vm.dump1()">dump to console</button>
+  <button ng-click="vm.dump2()">dump to console2</button>
+  <p>{{vm.success}}</p>
+  <p>{{vm.numbers}}</p>
+  <p>getDiscountedPrice: <?php echo getDiscountedPrice(16) ?></p>
+</main>

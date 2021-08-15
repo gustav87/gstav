@@ -1,0 +1,25 @@
+<main id="colorsPage">
+	<div class="flexContainer">
+		<div class="flexitem currentcolor" id="currentRed" style="background: rgb({{vm.red}},0,0);">{{vm.red}}</div>
+		<div class="flexitem currentcolor" id="currentGreen" style="background: rgb(0,{{vm.green}},0);">{{vm.green}}</div>
+		<div class="flexitem currentcolor" id="currentBlue" style="background: rgb(0,0,{{vm.blue}});">{{vm.blue}}</div>
+	</div>
+	<div class="flexContainer">
+		<div class="flexitem colorBoxes" id="red" ng-mouseleave="vm.stopInterval('red')" ng-mouseenter="vm.startIncrease('red')">Increase red</div>
+		<div class="flexitem colorBoxes" id="green" ng-mouseleave="vm.stopInterval('green')" ng-mouseenter="vm.startIncrease('green')">Increase green</div>
+		<div class="flexitem colorBoxes" id="blue"  ng-mouseleave="vm.stopInterval('blue')" ng-mouseenter="vm.startIncrease('blue')">Increase blue</div>
+	</div>
+	<div class="flexContainer">
+		<div class="flexitem whiteBoxes" ng-mouseleave="vm.stopInterval('red')" ng-mouseenter="vm.startDecrease('red')">Decrease red</div>
+		<div class="flexitem whiteBoxes" ng-mouseleave="vm.stopInterval('green')" ng-mouseenter="vm.startDecrease('green')">Decrease green</div>
+		<div class="flexitem whiteBoxes" ng-mouseleave="vm.stopInterval('blue')" ng-mouseenter="vm.startDecrease('blue')">Decrease blue</div>
+	</div>
+	<div class="flexContainer">
+		<div class="flexitem colorBucket" style="background: rgb({{vm.red}},{{vm.green}},{{vm.blue}}); color: rgb({{vm.bucketColor}},{{vm.bucketColor}},{{vm.bucketColor}});">
+			<span>Color bucket</span>
+			<span>Color bucket</span>
+			<span>Color bucket</span>
+		</div>
+	</div>
+	</div>
+</main>

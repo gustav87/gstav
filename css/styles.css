@@ -1,0 +1,271 @@
+@font-face {
+	font-family: 'Alex Brush';
+	src: url('../util/fonts/alexbrush-regular.woff2') format('woff2'), url('../util/fonts/alexbrush-regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+::selection {background: #54aa47;}
+html, body, main, header, nav, footer, ul, ol, div, h1, h2, h3, h4, h5, h6 {margin: 0; padding:0;}
+h1, h2, h3, h4, h5, h6 {font-family: 'Alex Brush', Helvetica, sans-serif; font-weight: 400;}
+body {
+	font-family: 'Roboto', sans-serif;
+	background: linear-gradient(290deg, rgba(148,187,233,0.8813726174063375) 11%, rgba(174,238,181,0.9009804605435925) 100%);
+/*	background: linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); OR linear-gradient(0deg, #61677B, #CA728F);
+	background: linear-gradient(60deg, #DAD299, #B0DAB9);*/
+	min-width: 320px; }
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: gray;
+	text-align: center;
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;}
+header {
+	height: 65px;
+	border-bottom: 2px solid black;
+	text-align:center;
+	box-sizing: border-box;
+	cursor: default;}
+header h1 {
+	font-size: 2.9em;
+	padding-top: 5px;}
+header h1 a {
+	text-decoration: none;
+	color: black;
+}
+header span {
+	font-family: 'Roboto';
+	font-size: 0.36em;
+	display: none;}
+
+main h2 {font-size: 2.15em;}
+main p {font-size: 1.1em;}
+#indexPage, #contactPage {
+	max-width: 1000px;
+}
+#blogPage, #playgroundPage {
+	max-width: 1200px;
+	display: flex;
+	font-size: 1.5em;
+}
+#indexPage .quickFacts li {
+	margin-bottom: 5px;
+}
+p {
+	margin-top: 0;
+}
+ul, li {
+	list-style: none;
+}
+#contactPage p {
+	margin: 1em 0 0.4em;
+	padding-left: 2px;
+}
+
+.active {background: darksalmon}
+
+main {
+	min-height: 200px;
+	clear: both;
+	border: 2px solid darksalmon;
+	padding: 10px;
+	margin: 10px auto 60px;
+}
+
+/* Navigation start */
+.fa-bars {color:#54aa47;}
+nav {
+	width: 100%;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+nav ul {
+	display: none;
+	clear: both;
+}
+nav ul li a {
+	width: 100%;
+	padding: 10px 0;
+	display: block;
+	text-align: center;
+	font-size: 1.5em;
+	text-decoration: none;
+	color: black;
+}
+#menuButton {display: block; float: right; font-size: 2.5em; margin-right: 5px; cursor: pointer;}
+.navButton {transition: all 0.5s ease;}
+.navButton:hover {background:darksalmon;}
+
+.navButton > a {
+	transition-property: color;
+	transition-duration: 1s;
+	transition-timing-function: ease-out;
+}
+.navButton:hover > a {
+	color: white;
+}
+/* Navigation end */
+
+#contactPage input[type=text], #contactPage select, #contactPage textarea{
+	width: 75%;
+	padding: 5px 8px;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background: #f8f8f8;
+	font-size: 14px;
+}
+
+@media (min-width: 1020px) {
+	header {
+		height: 120px;
+	}
+	header h1 {
+		font-size: 6em;
+	}
+	.bigWrapper {
+		height: calc(100vh - 120px);
+	}
+}
+@media (min-width: 620px) {
+	#menuButton {display: none;}
+	nav ul {display: block;}
+	nav ul li {display: inline-block;}
+	nav ul li a {
+		display: inline-block;
+		width: 120px;
+		padding: 10px 15px;
+	}
+	header span {
+		display: inline;
+	}
+	#contactPage input[type=text], #contactPage select, #contactPage textarea {
+		width: 50%;
+	}
+}
+@media (min-width: 500px) {
+	main p {
+		font-size: 1.2em;
+	}
+	main h2 {
+		font-size: 3em;
+	}
+}
+.box {
+	min-height:300px;
+	padding:10px;
+	border:2px solid #54aa47;
+}
+#indexPage {
+	columns: 2 420px;
+	column-gap: 10px;
+}
+
+/*blueTable design start*/
+.blueTable {border-collapse: collapse; width: 50%; margin-top:15px;}
+.blueTable .firstRow td {padding-top: 15px;}
+.blueTable td {padding: 8px; border: 1px solid blue; vertical-align: top;}
+.stars {
+	text-align: center;
+}
+/*blueTable design end*/
+
+/*jsBasicsPage styles start */
+#jsBasicsPage #box1, #jsBasicsPage .boxx {width: 200px; height: 150px; border: 1px solid black;
+	display: none;
+}
+#jsBasicsPage #button1, #jsBasicsPage label {background: cyan; padding: 10px; width: 100px;
+	cursor: pointer; margin-bottom: 30px;
+}
+#jsBasicsPage #button1:hover {background-color: blue; outline: 1px solid yellow;}
+#jsBasicsPage #button1:active + #box1{display: block;}
+#jsBasicsPage #lol {display: none;}
+#jsBasicsPage #lol:checked ~ .boxx {display: block;}
+#jsBasicsPage label:hover {background-color: green;}
+#jsBasicsPage nav ul li, #jsBasicsPage nav ul li a {
+	width: 100%;
+	overflow: hidden;
+}
+
+.red {color: red; background-color: blue;}
+
+#errorButton a:hover {background: teal; color:darkgrey;}
+#errorButton a {text-decoration: none; text-align: center; font-size: 1.4em; padding: 10px;
+	background: lightblue; border-radius: 0 10px 10px 0; border: 1px solid black;}
+/* jsBasicsPage styles end */
+
+/* githubPage styles start */
+#githubPage .flexContainer {
+	display: flex;
+	justify-content: space-between;
+}
+#githubPage .flexContainer > div {
+}
+#githubPage .flexContainer > .backButtons {
+}
+
+#githubPage img {width: 200px;}
+/* githubPage styles end */
+
+/* colorsPage styles start */
+#colorsPage {color: white;}
+#colorsPage .whiteBoxes {color: black;}
+#colorsPage > div {
+	display: flex;
+	justify-content: stretch;
+}
+#colorsPage .colorBucket {
+	display: flex;
+	justify-content: space-around;
+}
+.flexitem {
+	width: 100%;
+	padding: 10px;
+	margin: 10px;
+}
+
+.whiteBoxes {background: white;}
+#red {background: red;}
+#green {background: green;}
+#blue {background: blue;}
+/*colorsPage styles end */
+
+/*contactPage styles start */
+#contactPage #header {font-size: 40px; margin: 0;}
+#contactPage textarea {height: 200px; resize: none;}
+
+.formWrapper {
+	padding: 10px;
+	border: 2px solid #54aa47;
+}
+/*contactPage styles end */
+
+/*mapPage styles start */
+#mapPage #map {
+	height: 400px;
+}
+/*mapPage styles end */
+
+/* sidenav start */
+.display, .sidenav {
+	padding: 5px;
+	border: 2px solid #54aa47;
+	border-radius: 10px;
+}
+.sidenav {
+	width: 500px;
+}
+.display {
+	width: 100%;
+	margin-left: 20px;
+}
+.sidenav ul {list-style: none;}
+.sidenav ul li {
+	padding: 10px 15px;
+}
+.sidenav ul li a {
+	display: inline-block;
+}
+/* sidenav end */

@@ -1,0 +1,14 @@
+
+<main id="githubPage" class="content">
+	<div class="backNavigation">
+		<p><a href="#!/playground" ng-click="$parent.vm.stopCount()">Back to playground</a></p>
+	</div>
+	<div>
+		<p>Search for a username on GitHub and display their repositories!</p>
+	</div>
+	<form name="searchUser" ng-submit="vm.search(vm.username)">
+		<input type="search" placeholder="username to find" ng-model="vm.username" required>
+		<input type="submit" value="Search">
+		<p>Automatic search in {{vm.countdown}} seconds.</p>
+	</form>
+</main>

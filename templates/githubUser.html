@@ -1,0 +1,40 @@
+<main id="githubPage" class="content">
+	<div class="flexContainer">
+		<div class="backButtons">
+			<p><a href="#!/playground">Back to playground</a></p>
+			<p><a href="#!/playground/githubSearch">Back to search</a></p>
+		</div>
+		<div class="githubInfo">
+			<div>Choose sort order:</div>
+			<select ng-model="repoSortOrder" name="fishy">
+				<option value="+stargazers_count">Stars, ascending</option>
+				<option value="-stargazers_count">Stars, descending</option>
+				<option value="+name">Name, ascending</option>
+				<option value="-name">Name, descending</option>
+				<option value="+language">Language, ascending</option>
+				<option value="-language">Language, descending</option>
+			</select>
+			<div><img id="img1" ng-src="{{account.avatar_url}}" title="{{account.name}}"></div>
+			<p>You searched for: {{username}}</p>
+			<div id="userDetails">Username: {{account.name}}</div>
+			<div>User location: {{account.location}}</div>	
+		</div>
+		<div class="githubTable">
+			<table class="blueTable">
+				<thead><tr><th>Name</th><th>Stars</th><th>Language</th></tr></thead>
+				<tbody ng-repeat="item in repos | orderBy: repoSortOrder">
+					<tr>
+						<td>{{item.name}}</td>
+						<td class="stars">
+							{{item.stargazers_count | number}} 
+							<i class="fa fa-star-o fa-lg" aria-hidden="true"></i>
+						</td>
+						<td>{{item.language}}</td>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+	
+	</div>
+		
+</main>

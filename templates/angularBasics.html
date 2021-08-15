@@ -1,0 +1,27 @@
+<main id="angularBasicsPage">
+
+	<p>{{vm.people[0].name}}</p>
+	<p>{{vm.title}}</p>
+
+	<my-transclude>
+		<span>hejhej</span>
+		<div>I'm a leopard</div>
+	</my-transclude>
+
+	<select ng-model="country" ng-options="country.name for country in vm.nordicCountries">
+		<option value="">Nordic countries</option>
+	</select>
+
+	<p ng-if="country">You have chosen {{country.name}}, which has a population of {{country.population | num}}!</p>
+
+	<p>{{myVar | capitalize}}</p>
+
+	<p modify-style>fishy text!</p>
+
+	
+	<form name="vm.myForm" ng-click="vm.showFormInfo()">
+		<input type="text" required name="username" ng-model="vm.username">
+		<input type="password" name="password" ng-model="vm.password">
+	</form>
+	
+</main>

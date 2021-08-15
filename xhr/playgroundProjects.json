@@ -1,0 +1,30 @@
+[
+  {
+    "url": "githubSearch",
+    "title": "Github viewer"
+  },
+  {
+    "url": "colors",
+    "title": "Playing with colors"
+  },
+  {
+    "url": "map",
+    "title": "Map"
+  },
+  {
+    "url": "flickrViewer",
+    "title": "Flickr viewer"
+  },
+  {
+    "url": "angularBasics",
+    "title": "Angular basics"
+  },
+  {
+    "url": "dataBasics",
+    "title": "Database basics"
+  },
+  {
+    "url": "jsBasics",
+    "title": "JavaScript Basics"
+  }
+]
