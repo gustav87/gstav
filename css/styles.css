@@ -43,16 +43,10 @@ header span {
 
 main h2 {font-size: 2.15em;}
 main p {font-size: 1.1em;}
-#indexPage, #contactPage {
-	max-width: 1000px;
-}
+
 #blogPage, #playgroundPage {
-	max-width: 1200px;
 	display: flex;
-	font-size: 1.5em;
-}
-#indexPage .quickFacts li {
-	margin-bottom: 5px;
+
 }
 p {
 	margin-top: 0;
@@ -68,10 +62,11 @@ ul, li {
 .active {background: darksalmon}
 
 main {
+  max-width: 1000px;
 	min-height: 200px;
 	clear: both;
 	border: 2px solid darksalmon;
-	padding: 10px;
+	padding: 5px;
 	margin: 10px auto 60px;
 }
 
@@ -125,9 +120,6 @@ nav ul li a {
 	header h1 {
 		font-size: 6em;
 	}
-	.bigWrapper {
-		height: calc(100vh - 120px);
-	}
 }
 @media (min-width: 620px) {
 	#menuButton {display: none;}
@@ -152,15 +144,6 @@ nav ul li a {
 	main h2 {
 		font-size: 3em;
 	}
-}
-.box {
-	min-height:300px;
-	padding:10px;
-	border:2px solid #54aa47;
-}
-#indexPage {
-	columns: 2 420px;
-	column-gap: 10px;
 }
 
 /*blueTable design start*/
@@ -235,11 +218,6 @@ nav ul li a {
 /*contactPage styles start */
 #contactPage #header {font-size: 40px; margin: 0;}
 #contactPage textarea {height: 200px; resize: none;}
-
-.formWrapper {
-	padding: 10px;
-	border: 2px solid #54aa47;
-}
 /*contactPage styles end */
 
 /*mapPage styles start */
@@ -249,17 +227,20 @@ nav ul li a {
 /*mapPage styles end */
 
 /* sidenav start */
-.display, .sidenav {
-	padding: 5px;
+.display, .sidenav, .box {
+	padding: 10px;
+  margin: 5px;
 	border: 2px solid #54aa47;
 	border-radius: 10px;
 }
+
 .sidenav {
 	width: 500px;
+  font-size: 1.5em;
 }
 .display {
 	width: 100%;
-	margin-left: 20px;
+	margin-left: 10px;
 }
 .sidenav ul {list-style: none;}
 .sidenav ul li {
