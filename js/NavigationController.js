@@ -1,38 +1,27 @@
 (function() {
 
 angular
-	.module('myApp')
-	.controller('NavigationController', NavigationController);
+  .module('myApp')
+  .controller('NavigationController', NavigationController);
 
 NavigationController.$inject = ['$scope', '$interval', '$rootScope', '$location'];
 
 /* @ngInject */
 function NavigationController ($scope, $interval, $rootScope, $location) {
-	var vm = this;
-	vm.username = 'navigation...';
-	vm.$location = $location;
+  var vm = this;
+  vm.$location = $location;
 
+  vm.stopCount = function() {
+    console.log('inside stopCounter function');
+    if ($rootScope.countdownInterval) {
+      $interval.cancel($rootScope.countdownInterval);
+    }
+  };
 
-	console.log('windowinnerwidth: ', window.innerWidth);
-	console.log('bodyclientwidth: ', document.body.clientWidth);
-
-	var navEl = $('nav');
-	var height = navEl.offset().top;
-	console.log(height);
-
-	
-
-	vm.stopCount = function() {
-		console.log('inside stopCounter function');
-		if ($rootScope.countdownInterval) {
-			$interval.cancel($rootScope.countdownInterval);
-		}
-	};
-
-	vm.navClass = function(path) {
-		var currentRoute = $location.path();
-		return currentRoute.includes(path) ? 'active' : '';
-	};
+  vm.navClass = function(path) {
+    var currentRoute = $location.path();
+    return currentRoute.includes(path) ? 'active' : '';
+  };
 }
 
 }());
