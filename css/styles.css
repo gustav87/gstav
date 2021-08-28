@@ -250,3 +250,11 @@ nav ul li a {
 	display: inline-block;
 }
 /* sidenav end */
+
+#flickrViewerPage img {
+	width: 300px;
+}
+#flickrViewerPage div {
+	display: inline;
+}
+
