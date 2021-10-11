@@ -250,3 +250,11 @@ nav ul li a {
 	display: inline-block;
 }
 /* sidenav end */
+
+/* databasics page start */
+#dataBasicsPage input {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* databasics page end */

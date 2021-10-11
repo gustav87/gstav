@@ -10,15 +10,13 @@ DataBasicsController.$inject = ['$scope', '$http'];
 function DataBasicsController($scope, $http) {
 	var vm = this;
 	vm.title = 'DataBasics..';
-	vm.success = 'nothing posted yet...';
-	vm.numbers = [];
 
-	$.get('xhr/cat.html', function(data) {
-		$('#tst').html(data);
+	$.get('xhr/nameLabel.html', function(data) {
+		$('#nameLabel').html(data);
 	});
 
 	var request = null;
-	$('#myForm').submit(function(e) {
+	$('#dbForm').submit(function(e) {
 		e.preventDefault();
 		if (request) {
 			request.abort();

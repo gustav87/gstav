@@ -46,5 +46,5 @@ def databasics():
   return 'Record inserted into database.'
 
 if __name__ == '__main__':
-  #app.run(debug=True)
-  app.run(host=backend.ip.get_ip())
+  app.run(debug=True)
+  #app.run(host=backend.ip.get_ip())
