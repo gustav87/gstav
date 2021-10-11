@@ -258,3 +258,11 @@ nav ul li a {
 }
 
 /* databasics page end */
+
+#flickrViewerPage img {
+	width: 300px;
+}
+#flickrViewerPage div {
+	display: inline;
+}
+

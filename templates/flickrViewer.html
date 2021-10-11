@@ -1,13 +1,9 @@
-
 <main id="flickrViewerPage">
+  <p>Using the flickr gallery API to look at cute dawgs.</p>
+  <p>{{vm.err}}</p>
 
-	<p>Using the flickr gallery API to look at cute dawgs.</p>
-	<p>{{vm.err}}</p>
-
-
-	<div ng-repeat="p in vm.photos">
-		<p style="margin-top: 10px; margin-bottom: 5px;">{{p.title}}</p>
-		<img ng-src="{{vm.getImgSrc(p)}}">
-	</div>
-	
+  <div ng-repeat="p in vm.photos">
+    <span style="margin-top: 10px; margin-bottom: 5px;">{{p.title}}</span>
+    <img ng-src="{{vm.getImgSrc(p)}}">
+  </div>	
 </main>
