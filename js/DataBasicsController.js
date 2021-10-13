@@ -1,55 +1,55 @@
 (function() {
 
 angular
-	.module('myApp')
-	.controller('DataBasicsController', DataBasicsController);
+  .module('myApp')
+  .controller('DataBasicsController', DataBasicsController);
 
 DataBasicsController.$inject = ['$scope', '$http'];
 
 /* @ngInject */
 function DataBasicsController($scope, $http) {
-	var vm = this;
-	vm.title = 'DataBasics..';
+  var vm = this;
+  vm.title = 'DataBasics..';
 
-	$.get('xhr/nameLabel.html', data => {
-		$('#nameLabel').html(data);
-	});
+  $.get('xhr/nameLabel.html', data => {
+    $('#nameLabel').html(data);
+  });
 
-	$('#dbForm').submit(event => {
+  $('#dbForm').submit(event => {
     event.preventDefault();
 
-		var inputs = $(event.currentTarget).find('input');
-		var serializedData = $(event.currentTarget).serialize();
-		inputs.prop('disabled', true);
+    var inputs = $(event.currentTarget).find('input');
+    var serializedData = $(event.currentTarget).serialize();
+    inputs.prop('disabled', true);
 
-		request = $.ajax({
-			url: '/backend/databasics/insertRow',
-			type: 'GET',
-			data: serializedData,
-			success: (data) => {
-				console.log('second');
-				$('#insertRowResult').html(data);
-			}
-		});
-		request.done((response, textStatus, jqXHR) => {
-			console.log("Hooray, im third!");
-		});
-		request.fail((jqXHR, textStatus, errorThrown) => {
-			$('#resultText').html(`The following error occurred: <br> ${textStatus}: ${errorThrown}`);
+    request = $.ajax({
+      url: '/backend/databasics/insertRow',
+      type: 'GET',
+      data: serializedData,
+      success: (data) => {
+        console.log('second');
+        $('#insertRowResult').html(data);
+      }
+    });
+    request.done((response, textStatus, jqXHR) => {
+      console.log("Hooray, im third!");
+    });
+    request.fail((jqXHR, textStatus, errorThrown) => {
+      $('#resultText').html(`The following error occurred: <br> ${textStatus}: ${errorThrown}`);
       console.error("The following error occurred: " + textStatus, errorThrown);
-		});
-		request.always(() => {
-			setTimeout(() => {
-				inputs.prop("disabled", false);
-			}, 1500);
-		});
-		console.log('first!');
+    });
+    request.always(() => {
+      setTimeout(() => {
+        inputs.prop("disabled", false);
+      }, 1500);
+    });
+    console.log('first!');
   });
 
   $('#showDb').click(() => {
     request = $.ajax({
-			url: '/backend/databasics/getAllDocs',
-			success: function(json) {
+      url: '/backend/databasics/getAllDocs',
+      success: function(json) {
         jsonArr = JSON.parse(json)
         $('#showDbResult').append(
           `<tr>
@@ -65,11 +65,11 @@ function DataBasicsController($scope, $http) {
               <td>${obj.name}</td>
               <td>${obj.email}</td>
               <td>${obj.dateAdded}</td>
-            </tr>`)
+            </tr>`
+          )
         }
-  		}
-  	});
+      }
+    });
   });
-
 }
 }());
