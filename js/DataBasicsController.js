@@ -11,49 +11,65 @@ function DataBasicsController($scope, $http) {
 	var vm = this;
 	vm.title = 'DataBasics..';
 
-	$.get('xhr/nameLabel.html', function(data) {
+	$.get('xhr/nameLabel.html', data => {
 		$('#nameLabel').html(data);
 	});
 
-	var request = null;
-	$('#dbForm').submit(function(e) {
-		e.preventDefault();
-		if (request) {
-			request.abort();
-		}
+	$('#dbForm').submit(event => {
+    event.preventDefault();
 
-		var inputs = $(this).find('input');
-		var serializedData = $(this).serialize();
+		var inputs = $(event.currentTarget).find('input');
+		var serializedData = $(event.currentTarget).serialize();
 		inputs.prop('disabled', true);
 
 		request = $.ajax({
-			url: '/backend/databasics',
-//			url: 'php/insertRow.php',
+			url: '/backend/databasics/insertRow',
 			type: 'GET',
-//			type: 'POST',
 			data: serializedData,
-			success: function(data) {
+			success: (data) => {
 				console.log('second');
-				console.log('data:::: ', data);
-				$('#resultText').html(data);
+				$('#insertRowResult').html(data);
 			}
 		});
-		request.done(function (response, textStatus, jqXHR){
+		request.done((response, textStatus, jqXHR) => {
 			console.log("Hooray, im third!");
-			console.log('response: ' + response);
-			console.log('textStatus: ' + textStatus);
-			console.log('jqXHR:', jqXHR);
 		});
-		request.fail(function (jqXHR, textStatus, errorThrown){
-			console.error("The following error occurred: " + textStatus, errorThrown);
+		request.fail((jqXHR, textStatus, errorThrown) => {
+			$('#resultText').html(`The following error occurred: <br> ${textStatus}: ${errorThrown}`);
+      console.error("The following error occurred: " + textStatus, errorThrown);
 		});
-		request.always(function () {
-			setTimeout(function(){
+		request.always(() => {
+			setTimeout(() => {
 				inputs.prop("disabled", false);
 			}, 1500);
 		});
 		console.log('first!');
-	});
+  });
+
+  $('#showDb').click(() => {
+    request = $.ajax({
+			url: '/backend/databasics/getAllDocs',
+			success: function(json) {
+        jsonArr = JSON.parse(json)
+        $('#showDbResult').append(
+          `<tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date added</th>
+          </tr>`
+        )
+        for(var i = jsonArr.length - 1; i >= 0; i--) {
+          var obj = jsonArr[i];
+          $('#getAllDocsResult').append(`
+            <tr>
+              <td>${obj.name}</td>
+              <td>${obj.email}</td>
+              <td>${obj.dateAdded}</td>
+            </tr>`)
+        }
+  		}
+  	});
+  });
+
 }
 }());
-

@@ -40,10 +40,14 @@ def contact():
   backend.contact.sendmail()
   return f'Message sent.'
 
-@app.route('/backend/databasics')
-def databasics():
-  backend.dataBasics.insertRow(mongo)
+@app.route('/backend/databasics/insertRow')
+def insert_row():
+  backend.dataBasics.insertRow(mongo, mongo.db.customers)
   return 'Record inserted into database.'
+
+@app.route('/backend/databasics/getAllDocs')
+def get_all_docs():
+  return backend.dataBasics.getAllDocs(mongo, mongo.db.customers)
 
 if __name__ == '__main__':
   #app.run(debug=True)
