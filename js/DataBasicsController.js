@@ -51,7 +51,7 @@ function DataBasicsController($scope, $http) {
       url: '/backend/databasics/getAllDocs',
       success: function(json) {
         jsonArr = JSON.parse(json)
-        $('#showDbResult').append(
+        $('#getAllDocsResult').append(
           `<tr>
             <th>Name</th>
             <th>Email</th>
