@@ -1,6 +1,6 @@
 <main id="dataBasicsPage" class="content">
   <p>Input anything into the Name and Email fields to insert a record into the database.</p>
-  <form id="dbForm">
+  <form id="insertRowForm">
     <!-- nameLabel gets its text from xhr/nameLabel.html -->
     <label for="name" id="nameLabel"></label>
     <input type="text" name="name" id="name">
@@ -9,6 +9,12 @@
     <input type="submit" value="send">
   </form>
   <p id="insertRowResult"></p>
-  <button id="showDb">Show database</button>
+  <hr>
+  <p>Search the database. You can filter by name.</p>
+  <form id="searchDbForm">
+    <label for="filter">Filter by name: </label>
+    <input type="text" name="filter" id="filter">
+    <input type="submit" value="Search database"></input>
+  </form>
   <table id="getAllDocsResult"></table>
 </main>

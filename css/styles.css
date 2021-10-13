@@ -261,6 +261,14 @@ nav ul li a {
   text-align: left;
 }
 
+#dataBasicsPage hr {
+  border-top: 1px solid black;
+}
+
+#dataBasicsPage #filter {
+  display: inline;
+}
+
 /* databasics page end */
 
 #flickrViewerPage img {
@@ -269,4 +277,3 @@ nav ul li a {
 #flickrViewerPage div {
 	display: inline;
 }
-

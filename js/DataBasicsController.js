@@ -15,7 +15,7 @@ function DataBasicsController($scope, $http) {
     $('#nameLabel').html(data);
   });
 
-  $('#dbForm').submit(event => {
+  $('#insertRowForm').submit(event => {
     event.preventDefault();
 
     var inputs = $(event.currentTarget).find('input');
@@ -24,9 +24,9 @@ function DataBasicsController($scope, $http) {
 
     request = $.ajax({
       url: '/backend/databasics/insertRow',
-      type: 'GET',
+      type: 'POST',
       data: serializedData,
-      success: (data) => {
+      success: data => {
         console.log('second');
         $('#insertRowResult').html(data);
       }
@@ -46,10 +46,15 @@ function DataBasicsController($scope, $http) {
     console.log('first!');
   });
 
-  $('#showDb').click(() => {
+  $('#searchDbForm').submit(event => {
+    event.preventDefault()
+    var serializedData = $(event.currentTarget).serialize()
+    console.log(serializedData)
+
     request = $.ajax({
-      url: '/backend/databasics/getAllDocs',
-      success: function(json) {
+      url: '/backend/databasics/getDocuments',
+      data: serializedData,
+      success: json => {
         jsonArr = JSON.parse(json)
         $('#getAllDocsResult').html(
           `<tr>
@@ -69,7 +74,35 @@ function DataBasicsController($scope, $http) {
           )
         }
       }
-    });
-  });
+    })
+  })
+
+  // $('#searchDb').click(() => {
+  //   console.log($('#filter').val())
+  //   request = $.ajax({
+  //     url: '/backend/databasics/getDocuments',
+  //     data: 'ok=fisk',
+  //     success: function(json) {
+  //       jsonArr = JSON.parse(json)
+  //       $('#getAllDocsResult').html(
+  //         `<tr>
+  //           <th>Name</th>
+  //           <th>Email</th>
+  //           <th>Date added</th>
+  //         </tr>`
+  //       )
+  //       for(var i = jsonArr.length - 1; i >= 0; i--) {
+  //         var obj = jsonArr[i];
+  //         $('#getAllDocsResult').append(`
+  //           <tr>
+  //             <td>${obj.name}</td>
+  //             <td>${obj.email}</td>
+  //             <td>${obj.dateAdded}</td>
+  //           </tr>`
+  //         )
+  //       }
+  //     }
+  //   });
+  // });
 }
 }());
