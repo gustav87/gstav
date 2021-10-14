@@ -6,21 +6,32 @@ import time
 
 flickr_api = 'https://api.flickr.com/services/rest'
 json_format = 'format=json&nojsoncallback=1'
-amount = '10'
+amount = 20
 now = int(time.time())
 oneWeekAgo = now - 604800
 
 def getTaggedImages():
-  tag = f"&tags={request.args.get('tag')}" if request.args.get('tag') else ''
-  # print(f"{flickr_api}?method=flickr.photos.search&api_key={env.flickrApiKey}{tag}&per_page={amount}&max_taken_date={now}&min_taken_date={oneWeekAgo}&{json_format}")
-  url = f'{flickr_api}?method=flickr.photos.search&api_key={env.flickrApiKey}{tag}&per_page={amount}&max_taken_date={now}&min_taken_date={oneWeekAgo}&{json_format}'
+  tag = f"tags={request.args.get('tag')}&" if request.args.get('tag') else ''
+  url = (f'{flickr_api}?'
+         f'method=flickr.photos.search&'
+         f'api_key={env.flickrApiKey}&'
+         f'{tag}'
+         f'per_page={amount}&'
+         f'max_taken_date={now}&'
+         f'min_taken_date={oneWeekAgo}&'
+         f'{json_format}')
+
   contents = urllib.request.urlopen(url).read()
   decoded = contents.decode('ascii')
   return decoded
 
 def getDogs():
-  url = f'{flickr_api}?method=flickr.galleries.getPhotos&api_key={env.flickrApiKey}&gallery_id=66911286-72157685568512954&{json_format}'
+  url = (f'{flickr_api}?'
+         f'method=flickr.galleries.getPhotos&'
+         f'api_key={env.flickrApiKey}&'
+         f'gallery_id=66911286-72157685568512954&'
+         f'{json_format}')
+
   contents = urllib.request.urlopen(url).read()
-  print(f'contents: {contents}')
   decoded = contents.decode('ascii')
   return decoded
