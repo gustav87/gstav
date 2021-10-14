@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from flask import Flask, render_template, send_from_directory
 from flask_pymongo import PyMongo
-import backend.contact, backend.dataBasics, backend.ip, secret.env as env
+import backend.contact, backend.dataBasics, backend.ip, backend.flickr, secret.env as env
 
 app = Flask(__name__)
 
@@ -48,6 +48,14 @@ def insert_row():
 @app.route('/backend/databasics/getDocuments')
 def get_documents():
   return backend.dataBasics.getDocuments(mongo, mongo.db.customers)
+
+@app.route('/backend/flickr/getTaggedImages')
+def get_tagged_images():
+  return backend.flickr.getTaggedImages()
+
+@app.route('/backend/flickr/getDogs')
+def get_dogs():
+  return backend.flickr.getDogs()
 
 if __name__ == '__main__':
   # app.run(debug=True)

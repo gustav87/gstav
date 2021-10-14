@@ -1,9 +1,21 @@
 <main id="flickrViewerPage">
-  <p>Using the flickr gallery API to look at cute dawgs.</p>
-  <p>{{vm.err}}</p>
+  <p>Use the flickr API.</p>
+  <!-- <input type="checkbox" id="flickrDogs" ng-model="vm.showDogs">Look at dogs</input> -->
+  <label for="flickrTag">Input image tag</label>
+  <input type="text" name="flickrTag" id="flickrTag">
+  <br>
+  <button type="button" id="flickrImages" ng-click="vm.getTaggedImages()">Search for tagged images</button>
+  <button type="button" id="flickrDogs" ng-click="vm.getDogs()">Look at dogs</button>
+  <!-- <button type="button" id="flickrDogs" ng-click="vm.showDogs = !vm.showDogs">Look at dogs</button> -->
 
-  <div ng-repeat="p in vm.photos">
+  <p>{{vm.err}}</p>
+  <div ng-if="vm.showDogs" ng-repeat="p in vm.dogs">
     <span style="margin-top: 10px; margin-bottom: 5px;">{{p.title}}</span>
-    <img ng-src="{{vm.getImgSrc(p)}}">
-  </div>	
+    <img ng-src="{{vm.getDogImgSrc(p)}}">
+  </div>
+
+  <div ng-if="vm.showTaggedImages" ng-repeat="p in vm.taggedImages">
+    <span style="margin-top: 10px; margin-bottom: 5px;">{{p.title}}</span>
+    <img ng-src="{{vm.getTaggedImgSrc(p)}}">
+  </div>
 </main>

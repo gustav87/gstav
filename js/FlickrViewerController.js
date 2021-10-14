@@ -9,28 +9,43 @@ FlickrViewerController.$inject = ['$scope', '$http'];
 /* @ngInject */
 function FlickrViewerController($scope, $http) {
 	var vm = this;
-	vm.username = 'flickrviewer..';
-	vm.getImgSrc = getImgSrc;
-	init();
+	vm.getDogImgSrc = getDogImgSrc;
+  vm.getTaggedImgSrc = getTaggedImgSrc;
+  vm.showDogs = false
+  vm.showTaggedImages = false
+  vm.getDogs = getDogs
+  vm.getTaggedImages = getTaggedImages
 
-	function init() {
-		getPhotos();
-	}
-
-	function getPhotos() {
-		$http.get('https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=f925454b5e14cf6a8240faa38443cd71&gallery_id=66911286-72157685568512954&format=json&nojsoncallback=1')
-			.then(function(response) {
-				vm.photos = response.data.photos.photo;
-
-			}, function(err) {
+	function getDogs() {
+		$http.get("/backend/flickr/getDogs")
+			.then(response => {
+				vm.dogs = response.data.photos.photo
+        vm.showDogs = true
+        vm.showTaggedImages = false
+			}, err => {
 				vm.err = err;
 			});
 	}
-	function getImgSrc(p) {
-		return 'https://farm' + p.farm + '.staticflickr.com/' + p.server + '/' + p.id + '_' + p.secret + '.jpg';
+	function getDogImgSrc(p) {
+		return `https://farm${p.farm}.staticflickr.com/${p.server}/${p.id}_${p.secret}.jpg`;
 	}
-
-//6d3a9ee3ce484b53f9627d23792ef987
+  function getTaggedImages() {
+    tag = $('#flickrTag').val()
+    $http({
+      url: "/backend/flickr/getTaggedImages",
+      method: "GET",
+      params: {tag: tag}
+    }).then(response => {
+      vm.taggedImages = response.data.photos.photo
+      vm.showTaggedImages = true
+      vm.showDogs = false
+    }, err => {
+      vm.err = err
+    })
+  }
+  function getTaggedImgSrc(p) {
+    return `https://live.staticflickr.com/${p.server}/${p.id}_${p.secret}.jpg`
+  }
 
 // photos.forEach(function(item, index) {
 // 	var farm = item.farm;
@@ -40,7 +55,6 @@ function FlickrViewerController($scope, $http) {
 
 // 	flickrGallery.append('<img src="https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '.jpg"/>');
 // });
-
 
 }
 }());

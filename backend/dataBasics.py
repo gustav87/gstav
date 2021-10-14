@@ -10,7 +10,7 @@ def insertRow(mongo, collection):
 
 def getDocuments(mongo, collection):
   filter = request.args.get('filter')
-  docs = collection.find({'name': filter}) if filter else collection.find()
-  docs_list = list(docs)
-  json_data = dumps(docs_list)
+  docs = collection.find({'name': filter}) if filter else collection.find() # <pymongo.cursor.Cursor object at 0x7f4378d280d0>
+  docs_list = list(docs) # [{'a':'1'}, {'b':'2'}, {'c':'3'}]
+  json_data = dumps(docs_list) # [{"a":"1"}, {"b":"2"}, {"c":"3"}]
   return json_data
