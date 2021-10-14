@@ -272,9 +272,7 @@ nav ul li a {
 
 /* databasics page end */
 
-#flickrViewerPage img {
-	width: 300px;
-}
-#flickrViewerPage div {
-	display: inline;
+#flickrViewerPage div p {
+   margin-top: 10px;
+   margin-bottom: 5px;
 }
