@@ -9,9 +9,7 @@ ContactController.$inject = ['$scope'];
 /* @ngInject */
 function ContactController($scope) {
 var vm = this;
-vm.title = 'contact..';
 
-var smiley = $('#genderDiv img');
 var nameInput = $('#name');
 var emailInput = $('#email');
 var form = $('#contactMeForm');
@@ -20,9 +18,11 @@ var header = $('#header');
 init();
 
 function init() {
+  nameInput.focus()
+  
 	if (localStorage.name) {
 		nameInput.val(localStorage.name);
-	} 
+	}
 	if (localStorage.email) {
 		emailInput.val(localStorage.email);
 	}
@@ -50,4 +50,3 @@ function successCallback(responseText, statusText, xhr, $form) {
 
 }
 }());
-
