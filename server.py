@@ -58,5 +58,5 @@ def get_dogs():
   return backend.flickr.getDogs()
 
 if __name__ == '__main__':
-  # app.run(debug=True)
-  app.run(host=backend.ip.get_ip())
+  app.run(debug=True)
+  # app.run(host=backend.ip.get_ip())

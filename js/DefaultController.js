@@ -4,13 +4,9 @@ angular
 	.module('myApp')
 	.controller('DefaultController', DefaultController);
 
-DefaultController.$inject = ['$scope', '$rootScope'];
+DefaultController.$inject = ['$scope'];
 
 /* @ngInject */
-function DefaultController($scope, $rootScope) {
-	$scope.username = 'gus';
-	$rootScope.test = 'hej';
-	this.title = 'DefaultController';
+function DefaultController($scope) {
 }
 }());
-

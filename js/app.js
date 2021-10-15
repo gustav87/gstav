@@ -6,12 +6,9 @@ angular
 	.run(run);
 
 function run($rootScope, $location, $log) {
-	$rootScope.myVar = 'i exist on rootscope';
-
 	$rootScope.$on('$locationChangeStart', function(event, next, current) {
 		$log.info('location changing to: ' + next);
 	});
-
 }
 
 gustavRoute.$inject = ['$routeProvider'];
@@ -81,4 +78,3 @@ function gustavRoute($routeProvider) {
 	});
 }
 }());
-

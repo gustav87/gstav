@@ -8,9 +8,6 @@ JsBasicsController.$inject = ['$scope'];
 
 /* @ngInject */
 function JsBasicsController($scope) {
-
-var vm = this;
-vm.username = 'js basics..';
-
+  var vm = this;
 }
 }());
