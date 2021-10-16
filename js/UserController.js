@@ -24,7 +24,6 @@ function UserController($scope, githubFactory, $routeParams) {
 		githubFactory.getUser($scope.username).then(onUserComplete, onError);
 	};
 
-	
 	$scope.account = null;
 	$scope.username = $routeParams.username;
 	$scope.repoSortOrder = '+stargazers_count';

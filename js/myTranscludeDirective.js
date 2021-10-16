@@ -2,7 +2,7 @@
 
 angular
 	.module('myApp')
-	.directive('myTransclude', myTranscludeDirective); 
+	.directive('myTransclude', myTranscludeDirective);
 
 myTranscludeDirective.$inject = ['$location'];
 
@@ -17,12 +17,11 @@ function myTranscludeDirective($location) {
 		}
 	};
 
-
 	return directive;
 }
 
 
-var templateHtml = 
+var templateHtml =
 		"<div> jag gillar ostfrallor </div>" +
 		"<p ng-transclude> och en bit sås</p>";
 

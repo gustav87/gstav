@@ -9,7 +9,6 @@ DataBasicsController.$inject = ['$scope', '$http'];
 /* @ngInject */
 function DataBasicsController($scope, $http) {
   var vm = this;
-  vm.title = 'DataBasics..';
 
   $.get('xhr/nameLabel.html', data => {
     $('#nameLabel').html(data);
@@ -76,33 +75,5 @@ function DataBasicsController($scope, $http) {
       }
     })
   })
-
-  // $('#searchDb').click(() => {
-  //   console.log($('#filter').val())
-  //   request = $.ajax({
-  //     url: '/backend/databasics/getDocuments',
-  //     data: 'ok=fisk',
-  //     success: function(json) {
-  //       jsonArr = JSON.parse(json)
-  //       $('#getAllDocsResult').html(
-  //         `<tr>
-  //           <th>Name</th>
-  //           <th>Email</th>
-  //           <th>Date added</th>
-  //         </tr>`
-  //       )
-  //       for(var i = jsonArr.length - 1; i >= 0; i--) {
-  //         var obj = jsonArr[i];
-  //         $('#getAllDocsResult').append(`
-  //           <tr>
-  //             <td>${obj.name}</td>
-  //             <td>${obj.email}</td>
-  //             <td>${obj.dateAdded}</td>
-  //           </tr>`
-  //         )
-  //       }
-  //     }
-  //   });
-  // });
 }
 }());

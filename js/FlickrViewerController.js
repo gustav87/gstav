@@ -46,15 +46,5 @@ function FlickrViewerController($scope, $http) {
   function getTaggedImgSrc(p) {
     return `https://live.staticflickr.com/${p.server}/${p.id}_${p.secret}.jpg`
   }
-
-// photos.forEach(function(item, index) {
-// 	var farm = item.farm;
-// 	var server = item.server;
-// 	var id = item.id;
-// 	var secret = item.secret;
-
-// 	flickrGallery.append('<img src="https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '.jpg"/>');
-// });
-
 }
 }());
